@@ -16,6 +16,8 @@ import java.util.Map;
  */
 public class NetUtil {
 
+    static OkHttpClient client = new OkHttpClient();
+
     /**
      * 通用的获取http请求的方法
      * 会根据header中的模式自动切换请求方式
@@ -65,7 +67,7 @@ public class NetUtil {
         if (param == null) {
             param = "";
         }
-        OkHttpClient client = new OkHttpClient();
+
         Request.Builder builder = new Request.Builder()
                 .url(url)
                 .post(RequestBody.create(null, param));
@@ -103,7 +105,6 @@ public class NetUtil {
      * @throws Exception
      */
     private static byte[] getByte(String url, Map<String, String> header) throws Exception {
-        OkHttpClient client = new OkHttpClient();
         Request.Builder builder = new Request.Builder();
         builder.url(url);
         for (String key : header.keySet()) {

@@ -5,8 +5,6 @@
 许可证MIT LICENSE，请勿用于非法用途  
 如有任何建议欢迎issue或mail:[shirosaki@flannep.com][1]
 
-V1.0版本已经移动到旧分支，不再进行更新。如有需求请切换分支。
-master分支为最新版本。  
 
 
 ## 主目录:

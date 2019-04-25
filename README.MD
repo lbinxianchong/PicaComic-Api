@@ -2,7 +2,6 @@
 
 本项目是哔咔漫画的Api，实现了大部分常用接口  
 如果您喜欢本项目，欢迎点个Star/Fork~ QwQ  
-许可证MIT LICENSE，请勿用于非法用途  
 如有任何建议欢迎issue或mail:[shirosaki@flannep.com][1]
 
 

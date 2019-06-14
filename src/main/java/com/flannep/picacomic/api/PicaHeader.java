@@ -51,9 +51,9 @@ public class PicaHeader implements Cloneable {
     public PicaHeader() {
         setSecret_key("~n}$S9$lGts=U)8zfL/R.PM9;4[3|@/CEsl~Kk!7?BYZ:BAa5zkkRBL7r|1/*Cr");
         setApi_Key("C69BAF41DA5ABD1FFEDC6D2FEA56B");
-        setApp_Version("2.1.0.7");
+        setApp_Version("2.1.0.8");
         setApp_Channel(1);
-        setBuild_Version(40);
+        setBuild_Version(41);
         setAccept("application/vnd.picacomic.com.v1+json");
         setApp_Platform("android");
         setApp_UUID(UUID.randomUUID().toString());
@@ -61,7 +61,9 @@ public class PicaHeader implements Cloneable {
         setHost("picaapi.picacomic.com");
         //为了不给哔咔官方造成困扰，提供一个供官方辨识的请求头
         //如果不愿意添加此请求头，请使用removeCustomHeader(String key)方法移除
-        setCustomHeader("sources", "PicaComic-api v2.0.0 beta;");
+        setCustomHeader("sources", "PicaComic-api v2.0.0-beta.1.2;");
+        //2.1.0.8更新后的高质量图片请求头
+        setCustomHeader("image-quality", "original");
     }
 
     /**

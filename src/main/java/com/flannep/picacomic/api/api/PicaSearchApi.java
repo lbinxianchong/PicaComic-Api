@@ -3,8 +3,8 @@ package com.flannep.picacomic.api.api;
 import com.flannep.picacomic.api.PicaHeader;
 import com.flannep.picacomic.api.exceptions.PicaException;
 import com.flannep.picacomic.api.results.PicaResult;
-import com.flannep.picacomic.api.results.category.PicaCategoryResult;
 import com.flannep.picacomic.api.results.book.PicaBooksResult;
+import com.flannep.picacomic.api.results.category.PicaCategoryResult;
 import com.flannep.picacomic.api.utils.NetUtil;
 import com.flannep.picacomic.api.utils.PicaRequestUtil;
 import net.sf.json.JSONArray;
@@ -28,6 +28,30 @@ public class PicaSearchApi {
      */
     public PicaSearchApi(PicaHeader header) {
         this.header = header;
+    }
+
+
+    /**
+     * 获取AI推荐
+     *
+     * @return
+     * @throws java.io.IOException 网络出错等
+     * @throws PicaException       哔咔请求出错
+     */
+    public PicaBooksResult getAIRecommendsBook(int page) throws Exception {
+        String keyword = "%E5%97%B6%E5%92%94AI%E6%8E%A8%E8%96%A6";
+        String url = String.format("https://picaapi.picacomic.com/comics?page=%d&c=%s&s=ua"
+                , page
+                , keyword);
+
+        header.setTargetURL(url);
+        header.setMethod(PicaHeader.Method.GET);
+        JSONObject json = JSONObject.fromObject(NetUtil.getResult(header));
+        PicaBooksResult result = new PicaBooksResult(json);
+        if (result.hasError()) {
+            throw new PicaException(result);
+        }
+        return result;
     }
 
     /**

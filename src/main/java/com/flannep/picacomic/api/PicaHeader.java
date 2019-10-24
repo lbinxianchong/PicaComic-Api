@@ -61,7 +61,7 @@ public class PicaHeader implements Cloneable {
         setHost("picaapi.picacomic.com");
         //为了不给哔咔官方造成困扰，提供一个供官方辨识的请求头
         //如果不愿意添加此请求头，请使用removeCustomHeader(String key)方法移除
-        setCustomHeader("sources", "PicaComic-api v2.0.0-beta.1.2;");
+        //setCustomHeader("sources", "PicaComic-api v2.0.0-beta.1.2;");
         //2.1.0.8更新后的高质量图片请求头
         setCustomHeader("image-quality", "original");
     }
